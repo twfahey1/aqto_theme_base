@@ -1,0 +1,79 @@
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+a.use-ajax.button {
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+a.use-ajax.button:hover {
+  background-color: #1e3a8a;
+}
+
+/* Converted Tailwind Config to scss */
+/* Converted Tailwind Config to scss */
+#layout-builder {
+  background-color: white;
+  color: black;
+}
+#layout-builder .layout-builder-block {
+  background-color: white;
+  color: black;
+}
+
+/* Converted Tailwind Config to scss */
+/* Define a custom keyframes animation for the glow effect */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #fff;
+  }
+  50% {
+    box-shadow: 0 0 20px, white 0 0 30px #414346;
+  }
+  100% {
+    box-shadow: 0 0 5px #fff;
+  }
+}
+/* Define a custom class for the glow effect */
+.glow:hover {
+  animation: glow 1.5s infinite;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,8 @@
+# Schema for the configuration files of the aqto_theme_base theme.
+aqto_theme_base.settings:
+  type: theme_settings
+  label: 'aqto_theme_base settings'
+  mapping:
+    example:
+      type: string
+      label: Example

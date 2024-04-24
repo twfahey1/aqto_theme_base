@@ -1,0 +1,50 @@
+// Base styles for headings
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  h5 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  h6 {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  a.use-ajax.button {
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  a.use-ajax.button:hover {
+    background-color: #1e3a8a;
+  }
+  

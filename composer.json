@@ -1,0 +1,16 @@
+{
+    "name": "twfahey1/aqto_theme_base",
+    "type": "drupal-theme",
+    "description": "Provides a base theme for Aqto sites.",
+    "keywords": ["Drupal", "theme", "base", "aqto"],
+    "homepage": "https://github.com/twfahey1/aqto_theme_base",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Tyler Fahey",
+            "email": "twfahey1@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

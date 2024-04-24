@@ -1,0 +1,11 @@
+// Include the variables file.
+@import 'variables';
+#layout-builder {
+    background-color: map-get($map: $backgroundColor, $key: 'primary');
+    color: map-get($map: $textColor, $key: 'primary');
+
+    .layout-builder-block {
+        background-color: map-get($map: $backgroundColor, $key: 'primary');
+        color: map-get($map: $textColor, $key: 'primary');
+    }
+}
