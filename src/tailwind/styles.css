@@ -46,7 +46,8 @@ select {
   .link {
     @apply text-blue-600 hover:text-blue-700;
   }
-}@font-face {
+}
+@font-face {
   font-family: "Geist";
   src: url("/themes/contrib/aqto_theme_base/fonts/geist-sans/Geist-Regular.ttf") format("truetype");
   font-weight: normal;

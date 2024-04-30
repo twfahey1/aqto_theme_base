@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./**/*.html.twig",
     "../../contrib/**/*.html.twig",
+    "../../custom/**/*.html.twig",
     "../../../modules/**/*.html.twig",
     "../../../modules/contrib/**/*.html.twig",
   ],
@@ -11,8 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         // Set the default font family for 'sans'.
-        sans: ['"Geist-Regular"', "sans-serif"],
-        // Other font families (if any) can go here.
+        sans: ['"Geist"', "sans-serif"],
       },
       colors: {
         primary: "black",
@@ -389,11 +389,12 @@ module.exports = {
     extend  : {},
   },
   plugins: [
-    plugin(function ({ addBase }) {
-      addBase({
-        html: { fontSize: "24px" },
-      });
-    }),
+    // Example: Override the font size base.
+    // plugin(function ({ addBase }) {
+    //   addBase({
+    //     html: { fontSize: "24px" },
+    //   });
+    // }),
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
   ],
