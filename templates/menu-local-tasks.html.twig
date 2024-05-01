@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display primary and secondary local tasks.
+ *
+ * Available variables:
+ * - primary: HTML list items representing primary tasks.
+ * - secondary: HTML list items representing secondary tasks.
+ *
+ * Each item in these variables (primary and secondary) can be individually
+ * themed in menu-local-task.html.twig.
+ *
+ * @ingroup themeable
+ */
+#}
+{# Define a "primary_list_classes" array that we'll add to the ul eventually. #}
+{%- set primary_list_classes = [
+  'flex',
+  'flex-wrap',
+  'justify-center',
+  'md:justify-start',
+  'border-b',
+  'border-gray-200',
+  'md:border-b-0',
+  'md:border-r',
+  'md:border-gray-200',
+  'md:pr-4',
+  'md:mr-4',
+  'md:mb-4',
+  'md:last:mr-0',
+  'md:last:mb-0',
+  'md:last:border-0',
+] -%}
+{# Same for secondary #}
+{%- set secondary_list_classes = [
+  'flex',
+  'flex-wrap',
+  'justify-center',
+  'md:justify-start',
+  'border-b',
+  'border-gray-200',
+  'md:border-b-0',
+  'md:border-r',
+  'md:border-gray-200',
+  'md:pr-4',
+  'md:mr-4',
+  'md:mb-4',
+  'md:last:mr-0',
+  'md:last:mb-0',
+  'md:last:border-0',
+] -%}
+{# Add the "primary_list_classes" to the ul attributes. #}
+{% if primary %}
+  <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
+  <ul class="{{ primary_list_classes|join(' ') }}">{{ primary }}</ul>
+{% endif %}
+{% if secondary %}
+  <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
+  <ul class="{{ secondary_list_classes|join(' ') }}">{{ secondary }}</ul>
+{% endif %}

@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a local task link.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper element.
+ * - is_active: Whether the task item is an active tab.
+ * - link: A rendered link element.
+ *
+ * Note: This template renders the content for each task item in
+ * menu-local-tasks.html.twig.
+ *
+ * @see template_preprocess_menu_local_task()
+ *
+ * @ingroup themeable
+ */
+#}
+{# Lets define an array that we'll addClass on to attributes, called 'additional_styles', and we'll initially want to put 'btn-base' #}
+{%- set additional_styles = [''] -%}
+{# Lets add the 'additional_styles' to the attributes #}
+<li{{ attributes.addClass(additional_styles) }}>
+  {{ link }}
+</li>
