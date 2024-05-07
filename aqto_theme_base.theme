@@ -10,28 +10,33 @@ declare(strict_types=1);
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
-function aqto_theme_base_preprocess_html(array &$variables): void {
-
+function aqto_theme_base_preprocess_html(array &$variables): void
+{
+    $dark_mode_toggle_enabled = theme_get_setting('dark_mode_toggle_enabled');
+    $variables['dark_mode_toggle_enabled'] = $dark_mode_toggle_enabled;
+    $dark_mode_enabled = theme_get_setting('dark_mode_enabled');
+    $variables['dark_mode_enabled'] = $dark_mode_enabled;
 }
 
 /**
  * Implements hook_preprocess_HOOK() for page.html.twig.
  */
-function aqto_theme_base_preprocess_page(array &$variables): void {
-
+function aqto_theme_base_preprocess_page(array &$variables): void
+{
 }
 
 /**
  * Implements hook_preprocess_HOOK() for node.html.twig.
  */
-function aqto_theme_base_preprocess_node(array &$variables): void {
-
+function aqto_theme_base_preprocess_node(array &$variables): void
+{
 }
 
 /**
  * Implements hook_preprocess_links() for links.html.twig. 
  */
-function aqto_theme_base_preprocess_links(array &$variables): void {
+function aqto_theme_base_preprocess_links(array &$variables): void
+{
     /**
      * We want to add a $link_classes array to our {{ item.link }} when we are rendering, and for now lets add "btn-base" to it.
      */
@@ -43,27 +48,26 @@ function aqto_theme_base_preprocess_links(array &$variables): void {
             $link['link']['#attributes']['class'][] = $class;
         }
     }
-    
 }
 
 /**
  * Implements hook_preprocess_menu_local_task().
  */
-function aqto_theme_base_preprocess_menu_local_task(array &$variables): void {
+function aqto_theme_base_preprocess_menu_local_task(array &$variables): void
+{
     // We'll have $variables["is_active"] which means we want to apply "btn-base" to attributes of the $variables['element']['#attributes']['class'][]. Otherwise, we'll put "btn-blue".
     if (!empty($variables['is_active'])) {
         $variables['link']['#attributes']['class'][] = 'btn-base';
-    }
-    else {       
+    } else {
         $variables['link']['#attributes']['class'][] = 'btn-blue';
     }
-        
 }
 
 /**
  * Implements hook_preprocess_menu_local_tasks().
  */
-function aqto_theme_base_preprocess_menu_local_tasks(array &$variables): void {
+function aqto_theme_base_preprocess_menu_local_tasks(array &$variables): void
+{
     // We want to add a class to the $variables['primary']['#attributes']['class'][] array. Let's add "btn-group".
     // $variables['primary']['#attributes']['class'][] = 'btn-group';
 }
@@ -71,7 +75,8 @@ function aqto_theme_base_preprocess_menu_local_tasks(array &$variables): void {
 /**
  * Implements hook_preprocess input__submit().
  */
-function aqto_theme_base_preprocess_input__submit(array &$variables): void {
+function aqto_theme_base_preprocess_input__submit(array &$variables): void
+{
     // We want to add a class to the $variables['attributes']['class'][] array. Let's add "btn-base".
     $variables['attributes']['class'][] = 'btn-base';
 }
@@ -79,18 +84,16 @@ function aqto_theme_base_preprocess_input__submit(array &$variables): void {
 /**
  * Implements hook_preprocess_status_messages().
  */
-function aqto_theme_base_preprocess_status_messages(array &$variables): void {
+function aqto_theme_base_preprocess_status_messages(array &$variables): void
+{
     // DependiNG on $variables["status_headings"]["status"]->string, we want to add a class to the $variables['attributes']['class'][] array. Let's add "bg-blue-100 text-blue-900". Or if its warning, we'll add "bg-yellow-100 text-yellow-900". Etc.
     if ($variables["status_headings"]["status"]->__toString() == 'Status message') {
         $variables['attributes']['class'][] = 'p-4 bg-blue-100 text-blue-900';
-    }
-    elseif ($variables["status_headings"]["warning"]->__toString() == 'Warning message') {
+    } elseif ($variables["status_headings"]["warning"]->__toString() == 'Warning message') {
         $variables['attributes']['class'][] = 'p-4 bg-yellow-100 text-yellow-900';
-    }
-    elseif ($variables["status_headings"]["error"]->__toString() == 'Error message') {
+    } elseif ($variables["status_headings"]["error"]->__toString() == 'Error message') {
         $variables['attributes']['class'][] = 'p-4 bg-red-100 text-red-900';
     }
-    
 }
 
 /**
@@ -100,8 +103,8 @@ function admininternet_theme_base_theme_suggestions_form_element_alter(array &$s
 {
     // If there is a $variables['element']['#type'] array, we want to take action. First, let's reverse this array. Then, we iterate through, adding a suggestion for "form_element__" . [the first one], then "form_element__" . [the first one] . "__" . [the second one], and so on.
     if (isset($variables['element']['#type']) && !is_array($variables['element']['#type'])) {
-      $element_type = $variables['element']['#type'];
-      $suggestions[] = 'form_element__' . $element_type;
+        $element_type = $variables['element']['#type'];
+        $suggestions[] = 'form_element__' . $element_type;
     }
 }
 
@@ -125,6 +128,4 @@ function admininternet_theme_base_theme_suggestions_form_alter(array &$suggestio
             }
         }
     }
-
-
 }

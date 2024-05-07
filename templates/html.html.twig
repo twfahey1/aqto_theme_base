@@ -1,0 +1,92 @@
+{#
+/**
+ * @file
+ * Theme override for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain one or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+{# Start of the main wrapper with conditional background classes #}
+  {# Lets add a floating "Toggle dark mode" button that inline JS will toggle the "dark" class on the <html> element #}
+  {# Only show button if dark_mode_toggle_enabled is true #}
+  {% if dark_mode_toggle_enabled %}
+  <button id="toggle-dark-mode" class="fixed bottom-4 left-4 z-50 bg-primary dark:bg-dark-primary text-primary dark:text-dark-primary border rounded-full p-2 shadow-md" onclick="toggleDarkMode()">
+      <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.38a9 9 0 01-9 9 9 9 0 110-18 9 9 0 019 9z"></path></svg>
+</button>
+{% endif %}
+{% if dark_mode_enabled %}
+<script>
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+  function setCookie(name, value, days) {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = `${name}=${value}; path=/; expires=${expires}`;
+  }
+
+  function updateThemeIcon(isDarkMode) {
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.innerHTML = isDarkMode
+      ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.38a9 9 0 01-9 9 9 9 0 110-18 9 9 0 019 9z"></path>'  // Sun icon for light mode
+      : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2M5.64 5.64l1.42 1.42M16.24 16.24l1.42 1.42M2 12h2m16 0h2M5.64 18.36l1.42-1.42M16.24 7.76l1.42-1.42M12 6a6 6 0 100 12 6 6 0 000-12z"></path>';  // Crescent moon icon for dark mode
+  }
+
+  function toggleDarkMode() {
+    const isDarkMode = document.documentElement.classList.toggle('dark');
+    updateThemeIcon(!isDarkMode);
+    setCookie('dark_mode', isDarkMode, 365);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const isDarkMode = getCookie('dark_mode') === 'true';
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    }
+    updateThemeIcon(!isDarkMode);
+  });
+</script>
+{% endif %}
+
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+  </head>
+
+  <body{{ attributes }}>
+    {#
+      Keyboard navigation/accessibility link to main content section in
+      page.html.twig.
+    #}
+    <a href="#main-content" class="visually-hidden focusable">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+</html>

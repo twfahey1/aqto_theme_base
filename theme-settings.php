@@ -20,10 +20,22 @@ function aqto_theme_base_form_system_theme_settings_alter(array &$form, FormStat
     '#open' => TRUE,
   ];
 
-  $form['aqto_theme_base']['example'] = [
-    '#type' => 'textfield',
-    '#title' => t('Example'),
-    '#default_value' => theme_get_setting('example'),
+
+  // Dark mode enabled toggle
+  $form['aqto_theme_base']['dark_mode_enabled'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enable dark mode'),
+    '#default_value' => theme_get_setting('dark_mode_enabled'),
+    '#description' => t('If checked, the dark mode will be enabled if users have it set as preference, or toggle is enabled below. The preference for user is stored as local cookie.'),
   ];
+
+  // dark_mode_toggle_enabled toggle
+  $form['aqto_theme_base']['dark_mode_toggle_enabled'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enable dark mode toggle'),
+    '#default_value' => theme_get_setting('dark_mode_toggle_enabled'),
+    '#description' => t(''),
+  ];
+
 
 }

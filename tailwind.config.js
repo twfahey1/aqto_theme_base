@@ -6,7 +6,10 @@ module.exports = {
     "../../custom/**/*.html.twig",
     "../../../modules/**/*.html.twig",
     "../../../modules/contrib/**/*.html.twig",
+    "../../../modules/contrib/**/*.yml",
+    "../../../modules/custom/**/*.yml",
     "./*.theme",
+    "../../config/*.yml",
   ],
   darkMode: 'class',
   theme: {
