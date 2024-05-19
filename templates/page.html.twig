@@ -87,4 +87,12 @@
     </footer>
   {% endif %}
 
+  {% if page.fixed_footer %}
+    <footer role="contentinfo" class="fixed-footer z-50">
+      {{ page.fixed_footer }}
+    </footer>
+  {% endif %}
+
+  {{ page.bottom }}
+
 </div>{# /.layout-container #}
