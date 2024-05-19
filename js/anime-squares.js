@@ -13,7 +13,7 @@
 
         // Define the number of squares and their properties
         var numSquares = 6;
-        var colors = ["bg-red-800", "bg-yellow-500", "bg-green-800"];
+        var colors = ["bg-blue-800", "bg-blue-600", "bg-blue-500"];
         var squares = [];
         for (var i = 0; i < numSquares; i++) {
           var colorClass = colors[i % colors.length];
