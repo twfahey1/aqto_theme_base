@@ -3,6 +3,9 @@ global:
   js:
     js/aqto-theme-base.js: {}
     js/alpine.js: {}
+    # Anime.js via cdn
+    https://cdn.jsdelivr.net/npm/animejs: { type: external, minified: true }
+    js/anime-underline-on-load.js: {}
   css:
     base:
       css/main.css: {}

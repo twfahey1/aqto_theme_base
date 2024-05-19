@@ -11,6 +11,7 @@ module.exports = {
     "../../../modules/custom/**/*.php",
     "./*.theme",
     "../../config/*.yml",
+    "./js/*.js",
   ],
   darkMode: 'class',
   theme: {
