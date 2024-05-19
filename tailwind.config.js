@@ -8,6 +8,7 @@ module.exports = {
     "../../../modules/contrib/**/*.html.twig",
     "../../../modules/contrib/**/*.yml",
     "../../../modules/custom/**/*.yml",
+    "../../../modules/custom/**/*.php",
     "./*.theme",
     "../../config/*.yml",
   ],

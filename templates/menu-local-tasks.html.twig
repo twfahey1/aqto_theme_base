@@ -50,11 +50,18 @@
   'md:last:border-0',
 ] -%}
 {# Add the "primary_list_classes" to the ul attributes. #}
-{% if primary %}
-  <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
-  <ul class="{{ primary_list_classes|join(' ') }}">{{ primary }}</ul>
-{% endif %}
-{% if secondary %}
-  <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
-  <ul class="{{ secondary_list_classes|join(' ') }}">{{ secondary }}</ul>
-{% endif %}
+<div x-data="{ open: false }" class="fixed z-50 bottom-0 left-0 w-full md:w-auto bg-white md:bg-transparent p-2 md:p-4">
+  <button @click="open = !open" class="md:hidden btn-blue">
+    Actions
+  </button>
+  <div x-show="open || window.innerWidth >= 768" @resize.window="open = window.innerWidth >= 768" class="md:flex">
+    {% if primary %}
+      <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
+      <ul class="{{ primary_list_classes|join(' ') }}">{{ primary }}</ul>
+    {% endif %}
+    {% if secondary %}
+      <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
+      <ul class="{{ secondary_list_classes|join(' ') }}">{{ secondary }}</ul>
+    {% endif %}
+  </div>
+</div>
