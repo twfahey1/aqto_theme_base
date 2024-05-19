@@ -6,6 +6,7 @@ global:
     # Anime.js via cdn
     https://cdn.jsdelivr.net/npm/animejs: { type: external, minified: true }
     js/anime-underline-on-load.js: {}
+    js/anime-squares.js: {}
   css:
     base:
       css/main.css: {}
