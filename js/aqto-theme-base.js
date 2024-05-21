@@ -9,7 +9,6 @@
   Drupal.behaviors.aqtoThemeBase = {
     attach (context, settings) {
 
-      console.log('It works!');
 
     }
   };
