@@ -9,6 +9,8 @@ module.exports = {
     "../../../modules/contrib/**/*.yml",
     "../../../modules/custom/**/*.yml",
     "../../../modules/custom/**/*.php",
+    "../../../modules/custom/**/*.js",
+    "../../../modules/contrib/**/*.js",
     "./*.theme",
     "../../config/*.yml",
     "./js/*.js",
