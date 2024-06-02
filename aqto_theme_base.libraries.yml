@@ -30,6 +30,6 @@ global:
       css/theme/print.css: { media: print }
   dependencies:
   - core/jquery
-  - core/jquery.once
   - core/drupal
   - core/drupalSettings
+  - core/once
