@@ -129,3 +129,18 @@ function admininternet_theme_base_theme_suggestions_form_alter(array &$suggestio
         }
     }
 }
+
+/**
+ * A preprocess form for form that we can add some classes to make it nice. 
+ */
+function aqto_theme_base_preprocess_form(array &$variables): void
+{
+    // If we are on the user login form...
+    if ($variables["element"]["#form_id"] == 'user_login_form') {
+        $variables["attributes"]["class"] = array_merge($variables["attributes"]["class"], [
+            'p-4', 'pt-2', 'bg-blue-100', 'text-blue-900', 'border-b-4', 'border-blue-400',
+            'flex', 'flex-col', 'space-y-4', 'flex-wrap', 'max-w-screen', 'items-center', 
+            'justify-center', 'min-h-screen', 'w-full', 'md:max-w-lg', 'mx-auto'
+        ]);
+    }
+}

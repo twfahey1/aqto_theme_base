@@ -1,0 +1,15 @@
+{# templates/form-element.html.twig #}
+<div{{ attributes.addClass('form-item', 'w-full') }}>
+    {% if description_display == 'before' and description %}
+        <div{{ description_attributes.addClass('description', 'text-sm', 'text-gray-600', 'mb-2') }}>{{ description }}</div>
+    {% endif %}
+
+    {{ label }}
+    <div class="mt-1">
+        {{ children }}
+    </div>
+
+    {% if description_display == 'after' and description %}
+        <div{{ description_attributes.addClass('description', 'text-sm', 'text-gray-600', 'mt-2') }}>{{ description }}</div>
+    {% endif %}
+</div>
