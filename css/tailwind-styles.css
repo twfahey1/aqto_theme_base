@@ -825,6 +825,9 @@ select {
 .form-checkbox {
   border-radius: 0px;
 }
+.form-radio {
+  border-radius: 100%;
+}
 .form-checkbox:focus,.form-radio:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -849,6 +852,17 @@ select {
 @media (forced-colors: active)  {
 
   .form-checkbox:checked {
+    -webkit-appearance: auto;
+       -moz-appearance: auto;
+            appearance: auto;
+  }
+}
+.form-radio:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+@media (forced-colors: active)  {
+
+  .form-radio:checked {
     -webkit-appearance: auto;
        -moz-appearance: auto;
             appearance: auto;
@@ -1086,6 +1100,14 @@ select {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(150 206 253 / var(--tw-ring-opacity));
 }
+.\!link {
+  --tw-text-opacity: 1;
+  color: rgb(89 167 246 / var(--tw-text-opacity));
+}
+.\!link:hover {
+  --tw-text-opacity: 1;
+  color: rgb(56 146 243 / var(--tw-text-opacity));
+}
 .link {
   --tw-text-opacity: 1;
   color: rgb(89 167 246 / var(--tw-text-opacity));
@@ -1104,6 +1126,9 @@ select {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+.\!visible {
+  visibility: visible !important;
 }
 .visible {
   visibility: visible;
@@ -1172,6 +1197,9 @@ select {
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.mb-4 {
+  margin-bottom: 1rem;
+}
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1183,6 +1211,9 @@ select {
 }
 .block {
   display: block;
+}
+.inline-block {
+  display: inline-block;
 }
 .inline {
   display: inline;
@@ -1220,6 +1251,9 @@ select {
 .h-14 {
   height: 3.5rem;
 }
+.h-2 {
+  height: 0.5rem;
+}
 .h-20 {
   height: 5rem;
 }
@@ -1228,6 +1262,9 @@ select {
 }
 .h-8 {
   height: 2rem;
+}
+.max-h-96 {
+  max-height: 24rem;
 }
 .min-h-\[100dvh\] {
   min-height: 100dvh;
@@ -1243,6 +1280,9 @@ select {
 }
 .w-10 {
   width: 2.5rem;
+}
+.w-2 {
+  width: 0.5rem;
 }
 .w-6 {
   width: 1.5rem;
@@ -1265,8 +1305,14 @@ select {
 .max-w-md {
   max-width: 28rem;
 }
+.max-w-xl {
+  max-width: 36rem;
+}
 .flex-1 {
   flex: 1 1 0%;
+}
+.grow {
+  flex-grow: 1;
 }
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
@@ -1313,6 +1359,9 @@ select {
 .flex-wrap {
   flex-wrap: wrap;
 }
+.items-start {
+  align-items: flex-start;
+}
 .items-center {
   align-items: center;
 }
@@ -1357,6 +1406,9 @@ select {
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
+.overflow-y-auto {
+  overflow-y: auto;
+}
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1364,6 +1416,9 @@ select {
 }
 .whitespace-nowrap {
   white-space: nowrap;
+}
+.rounded {
+  border-radius: 0.25rem;
 }
 .rounded-full {
   border-radius: 9999px;
@@ -1380,15 +1435,25 @@ select {
 .border {
   border-width: 1px;
 }
+.border-8 {
+  border-width: 8px;
+}
 .border-b {
   border-bottom-width: 1px;
 }
 .border-b-4 {
   border-bottom-width: 4px;
 }
+.border-solid {
+  border-style: solid;
+}
 .border-blue-400 {
   --tw-border-opacity: 1;
   border-color: rgb(150 206 253 / var(--tw-border-opacity));
+}
+.border-blue-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(20 122 243 / var(--tw-border-opacity));
 }
 .border-gray-200 {
   --tw-border-opacity: 1;
@@ -1397,6 +1462,14 @@ select {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(213 213 213 / var(--tw-border-opacity));
+}
+.border-green-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(103 222 168 / var(--tw-border-opacity));
+}
+.border-green-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 143 93 / var(--tw-border-opacity));
 }
 .bg-blue-100 {
   --tw-bg-opacity: 1;
@@ -1432,6 +1505,10 @@ select {
 .bg-gray-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(3 7 18 / var(--tw-bg-opacity));
+}
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(206 248 224 / var(--tw-bg-opacity));
 }
 .bg-primary {
   --tw-bg-opacity: 1;
@@ -1503,6 +1580,10 @@ select {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1521,6 +1602,10 @@ select {
 }
 .text-center {
   text-align: center;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .text-4xl {
   font-size: 2.25rem;
@@ -1588,6 +1673,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(109 109 109 / var(--tw-text-opacity));
 }
+.text-green-700 {
+  --tw-text-opacity: 1;
+  color: rgb(21 164 110 / var(--tw-text-opacity));
+}
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1595,6 +1684,10 @@ select {
 .text-red-900 {
   --tw-text-opacity: 1;
   color: rgb(211 21 16 / var(--tw-text-opacity));
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .text-yellow-900 {
   --tw-text-opacity: 1;
@@ -1626,8 +1719,21 @@ select {
 .outline {
   outline-style: solid;
 }
+.ring {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
 .blur {
   --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.invert {
+  --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .filter {
@@ -1650,8 +1756,47 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.\[array\:join-path\] {
+  array: join-path;
+}
+.\[canonical_entities\:node\] {
+  canonical_entities: node;
+}
+.\[canonical_entities\:user\] {
+  canonical_entities: user;
+}
+.\[comment\:cid\] {
+  comment: cid;
+}
+.\[commerce_order\:admin-url\] {
+  commerce_order: admin-url;
+}
+.\[commerce_order\:order_id\] {
+  commerce_order: order id;
+}
 .\[commerce_order\:order_number\] {
   commerce_order: order number;
+}
+.\[commerce_order\:url\] {
+  commerce_order: url;
+}
+.\[commerce_product\:title\] {
+  commerce_product: title;
+}
+.\[current-date\:html_date\] {
+  current-date: html date;
+}
+.\[current-date\:html_week\] {
+  current-date: html week;
+}
+.\[current-date\:short\] {
+  current-date: short;
+}
+.\[current-page\:\*\] {
+  current-page: *;
+}
+.\[current-page\:page-number\] {
+  current-page: page-number;
 }
 .\[current-page\:title\] {
   current-page: title;
@@ -1659,8 +1804,14 @@ select {
 .\[current-page\:url\] {
   current-page: url;
 }
+.\[current-user\:account-name\] {
+  current-user: account-name;
+}
 .\[current-user\:display-name\] {
   current-user: display-name;
+}
+.\[current-user\:ip-address\] {
+  current-user: ip-address;
 }
 .\[current-user\:mail\] {
   current-user: mail;
@@ -1668,8 +1819,89 @@ select {
 .\[current-user\:missing\] {
   current-user: missing;
 }
+.\[current-user\:uid\] {
+  current-user: uid;
+}
+.\[date\:html_date\] {
+  date: html date;
+}
 .\[date\:html_datetime\] {
   date: html datetime;
+}
+.\[date\:html_week\] {
+  date: html week;
+}
+.\[date\:short\] {
+  date: short;
+}
+.\[element\:key\] {
+  element: key;
+}
+.\[entity\:country_name\] {
+  entity: country name;
+}
+.\[entity\:field_name\] {
+  entity: field name;
+}
+.\[example\:login-url\] {
+  example: login-url;
+}
+.\[example\:path\] {
+  example: path;
+}
+.\[example\:path_part\] {
+  example: path part;
+}
+.\[example\:safe\] {
+  example: safe;
+}
+.\[example\:something_url\] {
+  example: something url;
+}
+.\[example\:unsafe\] {
+  example: unsafe;
+}
+.\[example\:url-brief\] {
+  example: url-brief;
+}
+.\[example\:url\] {
+  example: url;
+}
+.\[group\:\\1\] {
+  group: \1;
+}
+.\[group\:owner\] {
+  group: owner;
+}
+.\[invalid\:title\] {
+  invalid: title;
+}
+.\[language\:direction\] {
+  language: direction;
+}
+.\[language\:domain\] {
+  language: domain;
+}
+.\[language\:langcode\] {
+  language: langcode;
+}
+.\[language\:name\] {
+  language: name;
+}
+.\[language\:prefix\] {
+  language: prefix;
+}
+.\[missing\:clear\] {
+  missing: clear;
+}
+.\[node\:body\] {
+  node: body;
+}
+.\[node\:field_keywords\] {
+  node: field keywords;
+}
+.\[node\:menu\] {
+  node: menu;
 }
 .\[node\:summary\] {
   node: summary;
@@ -1677,11 +1909,38 @@ select {
 .\[node\:title\] {
   node: title;
 }
+.\[node\:tnid\] {
+  node: tnid;
+}
+.\[node\:type-name\] {
+  node: type-name;
+}
+.\[node\:type\] {
+  node: type;
+}
+.\[node\:updated\$1\] {
+  node: updated$1;
+}
 .\[node\:url\] {
   node: url;
 }
+.\[pathauto_string_id_test\:name\] {
+  pathauto_string_id_test: name;
+}
+.\[pattern\:month\] {
+  pattern: month;
+}
 .\[pattern\:number\] {
   pattern: number;
+}
+.\[pattern\:year\] {
+  pattern: year;
+}
+.\[random\:number\] {
+  random: number;
+}
+.\[safe\:example\] {
+  safe: example;
 }
 .\[simplenews-subscriber\:combined-url\] {
   simplenews-subscriber: combined-url;
@@ -1695,6 +1954,9 @@ select {
 .\[simplenews-subscriber\:unsubscribe-url\] {
   simplenews-subscriber: unsubscribe-url;
 }
+.\[site\:invalid\] {
+  site: invalid;
+}
 .\[site\:login-url\] {
   site: login-url;
 }
@@ -1704,8 +1966,17 @@ select {
 .\[site\:name\] {
   site: name;
 }
+.\[site\:slogan\] {
+  site: slogan;
+}
 .\[site\:url\] {
   site: url;
+}
+.\[source_entity\:id\] {
+  source_entity: id;
+}
+.\[source_entity\:type\] {
+  source_entity: type;
 }
 .\[term\:description\] {
   term: description;
@@ -1715,6 +1986,9 @@ select {
 }
 .\[term\:url\] {
   term: url;
+}
+.\[term\:vocabulary\] {
+  term: vocabulary;
 }
 .\[user\:account-name\] {
   user: account-name;
@@ -1728,14 +2002,38 @@ select {
 .\[user\:edit-url\] {
   user: edit-url;
 }
+.\[user\:ip-address\] {
+  user: ip-address;
+}
+.\[user\:mail\] {
+  user: mail;
+}
+.\[user\:name\] {
+  user: name;
+}
 .\[user\:one-time-login-url\] {
   user: one-time-login-url;
+}
+.\[user\:profile\] {
+  user: profile;
 }
 .\[user\:registrationpassword-url\] {
   user: registrationpassword-url;
 }
+.\[user\:roles\] {
+  user: roles;
+}
+.\[user\:uid\] {
+  user: uid;
+}
 .\[user\:url\] {
   user: url;
+}
+.\[view\:url\] {
+  view: url;
+}
+.\[vocabulary\:name\] {
+  vocabulary: name;
 }
 .\[webform\:author\] {
   webform: author;
@@ -1746,8 +2044,14 @@ select {
 .\[webform\:description\] {
   webform: description;
 }
+.\[webform\:handler\] {
+  webform: handler;
+}
 .\[webform\:id\] {
   webform: id;
+}
+.\[webform\:invalid\] {
+  webform: invalid;
 }
 .\[webform\:open\] {
   webform: open;
@@ -1755,11 +2059,29 @@ select {
 .\[webform\:title\] {
   webform: title;
 }
+.\[webform\:token\] {
+  webform: token;
+}
 .\[webform\:url\] {
   webform: url;
 }
+.\[webform_access\:admins\] {
+  webform_access: admins;
+}
+.\[webform_access\:all\] {
+  webform_access: all;
+}
+.\[webform_access\:emails\] {
+  webform_access: emails;
+}
 .\[webform_access\:type\] {
   webform_access: type;
+}
+.\[webform_access\:users\] {
+  webform_access: users;
+}
+.\[webform_role\:\$role_name\] {
+  webform_role: $role name;
 }
 .\[webform_role\:administrator\] {
   webform_role: administrator;
@@ -2012,6 +2334,10 @@ select {
   color: rgb(177 177 177 / var(--tw-text-opacity));
 }
 @media (min-width: 640px) {
+
+  .sm\:inline {
+    display: inline;
+  }
 
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
