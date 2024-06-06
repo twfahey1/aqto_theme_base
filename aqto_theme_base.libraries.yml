@@ -7,6 +7,7 @@ global:
     https://cdn.jsdelivr.net/npm/animejs: { type: external, minified: true }
     js/anime-underline-on-load.js: {}
     js/anime-squares.js: {}
+    js/anime-glowing-button.js: {}
   css:
     base:
       css/main.css: {}
