@@ -30,9 +30,6 @@
 #}
 <div{{ attributes.addClass('') }}>
   {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes.addClass('anime-underline-on-load font-black text-4xl pl-2 pt-24 pb-2') }}>{{ label }}</h2>
-  {% endif %}
   {{ title_suffix }}
   {% block content %}
     {{ content }}
